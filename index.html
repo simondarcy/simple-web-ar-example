@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>WEB AR Demo</title>
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+        <script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
+        <script src="js/simon-ar.js"></script>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+
+    <body style='margin : 0; overflow: hidden;'>
+
+        <div class="message" id="about">
+            <div class="inner">
+                <h1>What's This?</h1>
+                <p>RT&Eacute; Online are always looking at new ways to display content.</p>
+                <p>This is an experiment using WebRTC which allows users to experience Augmented Reality in their mobile web browser (so no app).</p>
+                <p>You can learn more about WebRTC <a href="https://webrtc.org/" class="here">here</a></p>
+                <a href="javascript:void(0)" id="close">Close X</a>
+            </div>
+        </div>
+
+        <div id="infoLink"><a href="javascript:void(0);" >Whats all this about??</a></div>
+
+        <a-scene embedded arjs='sourceType: webcam;'>
+
+            <a-assets>
+                <img id="frame1" src="img/marty-frame1.png">
+                <img id="frame2" src="img/marty-frame2.png">
+                <img id="frame3" src="img/marty-frame3.png">
+                <img id="frame4" src="img/marty-frame4.png">
+                <img id="frame5" src="img/marty-frame5.png">
+                <img id="frame6" src="img/marty-frame6.png">
+                <img id="frame7" src="img/marty-frame7.png">
+                <img id="frame8" src="img/marty-frame8.png">
+                <img id="frame9" src="img/marty-frame9.png">
+            </a-assets>
+
+            <a-marker-camera mouse-cursor preset='custom' position="0 0 0" type='pattern' url='rte-logo.patt' listener>
+                <a-image id="animation" src="#frame1" position="-1.5 0 -2" scale="3 3 3" rotation="-90 0 0" selectable></a-image>
+                <a-text value="Tap on Marty!" color="#f1c40f" scale="2 2 2" rotation="-90 0 0" position="-2.5 0 0"></a-text>
+            </a-marker-camera>
+
+        </a-scene>
+
+
+        <audio preload="auto" id="themetune" autostart="false">
+            <source src="//rte.ie/static/dwts.mp3" type="audio/mpeg">
+        </audio>
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+    </body>
+
+
+</html>
